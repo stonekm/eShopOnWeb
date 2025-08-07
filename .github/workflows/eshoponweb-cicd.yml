@@ -10,6 +10,7 @@ env:
   TEMPLATE-FILE: infra/webapp.bicep
   SUBSCRIPTION-ID: 225fbc77-bd48-4ab5-95f2-86b561f69c64
   WEBAPP-NAME: devops-webapp-eastus-103949545
+  
 
 jobs:
   #Build, test and publish .net web project in repository
