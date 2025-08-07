@@ -70,6 +70,15 @@ jobs:
       with:
         name: bicep-template
         path: bicep-template
+
+    - name: Validate Bicep Template
+      uses: azure/cli@v2
+      with:
+        inlineScript: |
+          az deployment group validate \
+            --resource-group ${{ env.RESOURCE-GROUP }} \
+            --template-file infra/webapp.bicep \
+            --parameters webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}
         
    #Login in your azure subscription using a service principal (credentials stored as GitHub Secret in repo)
     - name: Azure Login
